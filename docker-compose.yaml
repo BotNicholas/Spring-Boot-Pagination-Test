@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  postgresql:
+    image: bitnami/postgresql:latest
+    ports:
+      - 54321:5432
+    environment:
+      POSTGRESQL_DATABASE: pages
+      POSTGRESQL_USERNAME: root
+      POSTGRESQL_PASSWORD: password
