@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.botnicholas.projects.demopagination.model.Page;
 import org.botnicholas.projects.demopagination.model.dto.PagesResponse;
+import org.botnicholas.projects.demopagination.model.test.PropertyClass;
 import org.botnicholas.projects.demopagination.model.test.Test;
 import org.botnicholas.projects.demopagination.service.PagesService;
 import org.springframework.http.HttpHeaders;
@@ -23,10 +24,16 @@ public class PagesController {
     private final PagesService pagesService;
 
     private final Test test;
+    private final PropertyClass propertyClass;
 
     @GetMapping("/say")
-    public void say() {
-        test.saySomething();
+    public String say() {
+        return test.saySomething();
+    }
+
+    @GetMapping("/enabled-class")
+    public String enabledClass() {
+        return propertyClass.logInfo();
     }
 
     @GetMapping

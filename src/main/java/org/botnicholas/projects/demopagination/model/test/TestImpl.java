@@ -7,7 +7,9 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class TestImpl implements Test{
     @Override
-    public void saySomething() {
-        log.info("saying Something Implemented");
+    public String saySomething() {
+        var str = "saying Something Implemented";
+        log.info(str);
+        return str;
     }
 }

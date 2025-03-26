@@ -6,7 +6,9 @@ import org.slf4j.LoggerFactory;
 @Slf4j
 public class TestDefaultImpl implements Test {
     @Override
-    public void saySomething() {
-        LoggerFactory.getLogger(Test.class).warn("saying Something Default");
+    public String saySomething() {
+        var str = "saying Something Default";
+        LoggerFactory.getLogger(Test.class).warn(str);
+        return str;
     }
 }
