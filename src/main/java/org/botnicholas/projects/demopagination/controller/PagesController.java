@@ -39,6 +39,13 @@ public class PagesController {
         return propertyClass.logInfo();
     }
 
+    //POST body example:
+    /*
+    {
+        "Hello": "World",
+        "This is": "a test :D"
+    }
+    */
     @PostMapping("/send-object")
     public String sendObject(@RequestBody Map<String, String> body) {
         body.entrySet().stream().forEach(entry -> {
